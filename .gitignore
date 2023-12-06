@@ -1,0 +1,21 @@
+# System / Log files
+*.DS_Store
+*.log
+*.env
+*.sql
+
+# Archives
+*.zip
+*.txt
+
+# Config file
+# app/Config/
+assets/upload/import
+assets/images/captcha
+writable/
+note/
+tests/
+public/
+app/Config/Database.php
+app/Config/App.php
+assets/upload/file/
