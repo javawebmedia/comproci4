@@ -92,6 +92,34 @@
             </ul>
           </li>
 
+          <!-- PORTFOLIO -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tasks"></i>
+              <p>Portfolio <i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/portfolio') ?>" class="nav-link">
+                  <i class="fa fa-arrow-right nav-icon"></i>
+                  <p>Data Portfolio</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/portfolio/tambah') ?>" class="nav-link">
+                  <i class="fa fa-arrow-right nav-icon"></i>
+                  <p>Tambah Portfolio</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/kategori_portfolio') ?>" class="nav-link">
+                  <i class="fa fa-arrow-right nav-icon"></i>
+                  <p>Kategori Portfolio</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <!-- galeri -->
           <li class="nav-item">
             <a href="#" class="nav-link">

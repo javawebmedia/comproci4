@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => '',
+        'password'     => 'root',
         'database'     => 'marketplace_website',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

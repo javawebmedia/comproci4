@@ -53,7 +53,7 @@ if($popup) {
 <!--==============================
 Hero Area
 ==============================-->
-<div class="as-hero-wrapper hero-1 background-heroj">
+<div class="as-hero-wrapper hero-1 background-heroj" style="background-color: black;">
     <div class="container z-index-common">
         <div class="row">
             <div class="col-lg-8 mt-3">
