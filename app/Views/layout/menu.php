@@ -9,6 +9,7 @@ $nav_berita     = $m_menu->berita();
 $nav_layanan    = $m_menu->profil('Layanan');
 $nav_layanan2   = $m_menu->profil('Layanan');
 $nav_cabang     = $m_menu->cabang('Publish');
+$nav_portfolio  = $m_menu->portfolio();
 ?>
 <!--==============================
 Header Area
@@ -34,6 +35,19 @@ Header Area
                                                 <li>
                                                     <a href="<?php echo base_url() ?>">Home</a>
                                                 </li>
+
+                                                <!-- portfolio -->
+                                                <li class="menu-item-has-children">
+                                                    <a href="#">Portfolio</a>
+                                                    <ul class="sub-menu">
+                                                        <?php foreach($nav_portfolio as $nav_portfolio) { ?>
+                                                            <li><a href="<?php echo base_url('portfolio/detail/'.$nav_portfolio->slug_kategori_portfolio) ?>"><?php echo $nav_portfolio->nama_kategori_portfolio ?></a></li>
+                                                        <?php } ?>
+                                                        <li><a href="<?php echo base_url('portfolio') ?>">Semua Portfolio</a></li>
+                                                    </ul>
+                                                </li>
+                                                
+                                                <!-- layanan -->
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Layanan</a>
                                                     <ul class="sub-menu">

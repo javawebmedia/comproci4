@@ -83,4 +83,22 @@ class Menu_model extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    // Menu portfolio
+    public function portfolio()
+    {
+        $builder = $this->db->table('portfolio');
+        $builder->select('portfolio.id_portfolio, 
+                        kategori_portfolio.nama_kategori_portfolio, 
+                        kategori_portfolio.slug_kategori_portfolio');
+        
+        $builder->join('kategori_portfolio','kategori_portfolio.id_kategori_portfolio = portfolio.id_kategori_portfolio');
+        $builder->groupBy('portfolio.id_kategori_portfolio');
+        $builder->orderBy('kategori_portfolio.urutan','ASC');
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }
+
+
+

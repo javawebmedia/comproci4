@@ -34,6 +34,22 @@ class Portfolio_model extends Model
         return $query->getRow();
     }
 
+    // kategori_portfolio
+    public function kategori_portfolio($limit, $start, $slug_kategori_portfolio)
+    {
+        $builder = $this->db->table('portfolio');
+        $builder->select('portfolio.*, kategori_portfolio.nama_kategori_portfolio, kategori_portfolio.slug_kategori_portfolio, users.nama');
+        $builder->join('kategori_portfolio','kategori_portfolio.id_kategori_portfolio = portfolio.id_kategori_portfolio','LEFT');
+        $builder->join('users','users.id_user = portfolio.id_user','LEFT');
+
+        $builder->where('kategori_portfolio.slug_kategori_portfolio',$slug_kategori_portfolio);
+        $builder->limit($limit,$start);
+
+        $builder->orderBy('portfolio.id_portfolio','DESC');
+        $query = $builder->get();
+        return $query->getResult();
+    }
+
     // Listing
     public function paginasi_admin($limit,$start)
     {
@@ -82,6 +98,17 @@ class Portfolio_model extends Model
     public function total()
     {
         $builder = $this->db->table('portfolio');
+        $query = $builder->get();
+        return $query->getNumRows();
+    }
+
+    // total_kategori_portfolio
+    public function total_kategori_portfolio($id_kategori_portfolio)
+    {
+        $builder = $this->db->table('portfolio');
+
+        $builder->where('id_kategori_portfolio',$id_kategori_portfolio);
+
         $query = $builder->get();
         return $query->getNumRows();
     }
